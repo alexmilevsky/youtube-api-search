@@ -14,9 +14,10 @@ function handleAPILoaded() {
 // Search for a specified string.
 function search() {
   var q = $('#query').val();
+  $('#search-header').text(q);
   var request = gapi.client.youtube.search.list({
     q: q,
-    part: 'snippet',
+    part: 'snippet, id',
     maxResults: 20,
     order: 'viewCount'
   });
@@ -33,8 +34,17 @@ function search() {
       var title = item.snippet.title;
       var author = item.snippet.channelTitle;
       var date = item.snippet.publishedAt;
-      $('#search-cointainer-list').append('<li class="search-item">' + title + "/ author: " + author + '</li>');
+      var id = item.id.videoId;
+      //'<a href="#" onClick="playVideo(' + 1 + ')>"' +
+      $('#search-cointainer-list').append('<li class="search-item">'
+                                          + '<a href="#" onClick="playVideo(' + id + ')">' + title + '</a><br />'
+                                          + author + '<br />'
+                                          + date + '</li>');
     })
-
   });
+}
+
+function playVideo(id)
+{
+
 }
