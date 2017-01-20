@@ -1,0 +1,20 @@
+
+.accordion {
+    overflow:hidden;
+}
+
+/*----- Section Titles -----*/
+.search-item-title {
+    width:100%;
+    padding:15px;
+    display:inline-block;
+    transition:all linear 0.15s;
+    /* Type */
+    font-size:1.200em;
+}
+
+/*----- Section Content -----*/
+.search-item-content {
+    padding:15px;
+    display:none;
+}

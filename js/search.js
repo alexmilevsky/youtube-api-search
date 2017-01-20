@@ -29,17 +29,20 @@ function search() {
 
     $('#search-cointainer-list').empty();
     var searchItems = response.result.items;
-
+    var counter = 0;
     $.each(searchItems, function(index, item) {
+      counter++;
       var title = item.snippet.title;
       var author = item.snippet.channelTitle;
       var date = item.snippet.publishedAt;
       var id = item.id.videoId;
-      //'<a href="#" onClick="playVideo(' + 1 + ')>"' +
       $('#search-cointainer-list').append('<li class="search-item">'
-                                          + '<a href="#" onClick="playVideo(' + id + ')">' + title + '</a><br />'
+                                          + '<a class="search-item-title" href="#accordion-' + counter + '">'
+                                          + title + '</a><br />'
                                           + author + '<br />'
-                                          + date + '</li>');
+                                          + date + '<br />'
+                                          + '<div id="accordion-' + counter + '" class="search-item-content">Тест</div></li>'
+                                          );
     })
   });
 }
