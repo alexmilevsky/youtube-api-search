@@ -21,8 +21,20 @@ function search() {
     order: 'viewCount'
   });
 
+  // name video, author and date
   request.execute(function(response) {
     var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
+    console.log(str);
+
+    $('#search-cointainer-list').empty();
+    var searchItems = response.result.items;
+
+    $.each(searchItems, function(index, item) {
+      var title = item.snippet.title;
+      var author = item.snippet.channelTitle;
+      var date = item.snippet.publishedAt;
+      $('#search-cointainer-list').append('<li class="search-item">' + title + "/ author: " + author + '</li>');
+    })
+
   });
 }
