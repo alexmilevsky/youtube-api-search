@@ -1,4 +1,4 @@
-// Upon loading, the Google APIs JS client automatically invokes this callback.
+﻿// Upon loading, the Google APIs JS client automatically invokes this callback.
 googleApiClientReady = function() {
   gapi.client.setApiKey('AIzaSyCAKghrx-iQarm9RfDWOH8ssToUzuiSyTo');
   gapi.client.load('youtube', 'v3', function() {
@@ -14,7 +14,7 @@ function handleAPILoaded() {
 // Search for a specified string.
 function search() {
   var q = $('#query').val();
-  $('#search-header').text(q);
+  $('#search-header').text("Результаты по запросу: " + q);
   var request = gapi.client.youtube.search.list({
     q: q,
     part: 'snippet, id',
