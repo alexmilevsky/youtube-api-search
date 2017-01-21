@@ -41,13 +41,8 @@ function search() {
                                           + title + '</a><br />'
                                           + author + '<br />'
                                           + date + '<br />'
-                                          + '<div id="accordion-' + counter + '" class="search-item-content">Тест</div></li>'
+                                          + '<div id="accordion-' + counter + '" class="search-item-content">' + playVideo(id) + '</div></li>'
                                           );
     })
   });
-}
-
-function playVideo(id)
-{
-
 }
