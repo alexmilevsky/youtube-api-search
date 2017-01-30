@@ -65,7 +65,7 @@ function search() {
       // sorting by views and output video
       items.sort(compareViews);
       output();
-    }, 1000);
+    }, 5000);
   });
 }
 
